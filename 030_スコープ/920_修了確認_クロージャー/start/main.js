@@ -53,7 +53,8 @@ function calcFactory(val) {
   return {
     plus: function (target) {
       const result = val + target;
-      console.log(val + " + " + target + " = " + result)
+      // console.log(val + " + " + target + " = " + result)
+      console.log(`${val} + ${target} = ${result}`)
       val = result;
     },
     minus: function (target) {
