@@ -23,10 +23,13 @@
 let a = 1;
 
 function fn(num) {
-    num = num || -1;
+    if (num === undefined || num === null) {
+        num = -1;
+    }
     console.log(num);
 }
 fn(a);
+fn(0);
 
 
 /**
@@ -39,3 +42,15 @@ fn(a);
  * greeting("Bob"); -> 出力結果："hello, Bob"
  *
  */
+
+function greeting(name, word = "hello") {
+    text = `${word}, ${name}`;
+    console.log(text);
+    // console.log(`${word}, ${name}`);
+}
+
+// name = "Bob";
+// word = "hi";
+greeting('Bob');
+greeting('Bob', 'hi');
+
