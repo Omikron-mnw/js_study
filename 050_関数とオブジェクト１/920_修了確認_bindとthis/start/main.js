@@ -1,6 +1,6 @@
 const person = {
     name: 'Tom',
-    bye: () => {
+    bye() {
         console.log('Bye ' + this.name);
     },
     hello: function (greeting) {
@@ -23,8 +23,10 @@ const person = {
      * ３．thisを一旦変数に代入
      */
 
-
-    
+    hello1s: () => {
+        const helloTom = 'hello Tom';
+        console.log(helloTom)
+    }
 }
 
 /**
@@ -32,8 +34,10 @@ const person = {
  * 1秒後に"hello Tom"
  * と出力されるように、以下のコード
  * の記載を変更しましょう。
- */
-setTimeout(person.hello, 1000);
+*/
+// setTimeout(function() {
+//     person.hello('hello');
+// }, 1000);
 
 /**
  * 問題２：
@@ -41,7 +45,11 @@ setTimeout(person.hello, 1000);
  * と出力されるように、
  * 以下のコードを変更してください。
  */
-alert(person.hello);
+// const al1 = function() {
+//     const gre2 = person.hello('hello');
+//     alert(gre2);
+// }
+// al1();
 
 /**
  * 問題３：
@@ -50,4 +58,6 @@ alert(person.hello);
  * "Bye"しか表示されませんでした。
  * "Bye Tom"とするためにはどうすればよいでしょうか？
  */
-setTimeout(person.bye.bind(person), 1000);
+const byTom = person.bye.bind(person);
+
+setTimeout(byTom, 1000);

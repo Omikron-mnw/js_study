@@ -16,3 +16,4 @@ const arry = [1, 2, 3, 4, 5];
 // const result = Math.max.apply(null, Uint8ClampedArray);
 const result = Math.max(...arry);
 console.log(result);
+
