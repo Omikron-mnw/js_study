@@ -23,11 +23,23 @@ const person = {
      * ３．thisを一旦変数に代入
      */
 
-    hello1s: () => {
-        const helloTom = 'hello Tom';
-        console.log(helloTom)
+    hello1s() {
+    // １．bind
+        // setTimeout(this.hello.bind(this, 'hello'), 1000);
+    // ２．アロー関数
+        // setTimeout(() => {
+        //     this.hello('hello');
+        // }, 1000);
+    // ３．thisを一旦変数に代入
+        const _this = this;
+        setTimeout(function() {
+            _this.hello('hello');
+        }, 1000);
     }
+
 }
+
+person.hello1s();
 
 /**
  * 問題１：
@@ -58,6 +70,6 @@ const person = {
  * "Bye"しか表示されませんでした。
  * "Bye Tom"とするためにはどうすればよいでしょうか？
  */
-const byTom = person.bye.bind(person);
+// const byTom = person.bye.bind(person);
 
-setTimeout(byTom, 1000);
+// setTimeout(byTom, 1000);
