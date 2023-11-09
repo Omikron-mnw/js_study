@@ -19,3 +19,6 @@ class Person {
   }
 
 }
+
+const bob = new Person('Bob', 23);
+console.log(bob);
